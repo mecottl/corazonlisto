@@ -1,5 +1,6 @@
-import { useProgressContext } from "../contexts/ProgressContext"
+import { useProgressContext } from '../contexts/ProgressContext'
 
-export default function UseProgress() {
+// Default export para importar simplemente `useProgress()`
+export default function useProgress() {
   return useProgressContext()
 }

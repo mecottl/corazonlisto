@@ -1,149 +1,156 @@
 [
-  {
+    {
     "id": "start",
     "text": "¡Bienvenidx! ¿Estás listx para explorar si estás preparadx para una relación?",
     "options": [
-      { "label": "Sí, comencemos", "next": "awareness-1" },
-      { "label": "Prefiero pensarlo", "next": "awareness-1" }
+      { "label": "Sí, comencemos", "next": "q1" },
+      { "label": "Prefiero pensarlo", "next": "q1" }
     ]
   },
   {
-    "id": "awareness-1",
-    "text": "¿Cómo te sientes emocionalmente hoy?",
+    "id": "q1",
+    "text": "¿Cuál es tu motivación principal para querer una relación?",
     "options": [
-      { "label": "Conectado con mis emociones", "next": "commitment-1" },
-      { "label": "Un poco desconectado", "next": "commitment-2" },
-      { "label": "Confundido sobre lo que siento", "next": "commitment-3" }
+      { "label": "a) No quiero estar solx",                  "next": "q2a" },
+      { "label": "b) Quiero compartir mi vida y crecer juntxs", "next": "q2b" },
+      { "label": "c) Me siento presionadx por mi entorno",      "next": "q2c" },
+      { "label": "d) Quiero sanar una herida del pasado",       "next": "q2d" }
     ]
   },
   {
-    "id": "commitment-1",
-    "text": "Tu conexión emocional es fuerte. ¿Te resulta fácil compartir tus sentimientos con alguien más?",
+    "id": "q2a",
+    "text": "¿Te sientes completx contigo mismx cuando estás sin pareja?",
     "options": [
-      { "label": "Sí, me abro con facilidad", "next": "intimacy-1" },
-      { "label": "A veces me cuesta", "next": "intimacy-2" },
-      { "label": "No, me cuesta bastante", "next": "intimacy-3" }
+      { "label": "a) No, me siento incompletx",   "next": "q3" },
+      { "label": "b) A veces sí, a veces no",     "next": "q3" },
+      { "label": "c) Sí, disfruto mi soledad",    "next": "q3" }
     ]
   },
   {
-    "id": "commitment-2",
-    "text": "Estás algo desconectado. ¿Cuando piensas en tus emociones, sueles ignorarlas o explorarlas?",
+    "id": "q2b",
+    "text": "¿Sientes que podrías dar sin esperar que la otra persona te complete?",
     "options": [
-      { "label": "Las ignoro", "next": "selfcare-1" },
-      { "label": "Las exploro", "next": "selfcare-2" }
+      { "label": "a) Sí, sin condiciones",       "next": "q3" },
+      { "label": "b) Algunas veces me cuesta",   "next": "q3" },
+      { "label": "c) No estoy segurx",           "next": "q3" }
     ]
   },
   {
-    "id": "commitment-3",
-    "text": "La confusión puede indicar que necesitas mayor claridad. ¿Te cuesta identificar tus emociones en ciertos momentos?",
+    "id": "q2c",
+    "text": "¿Sientes que te conoces bien y sabes lo que buscas en una pareja?",
     "options": [
-      { "label": "Mucho", "next": "selfcare-3" },
-      { "label": "Algo", "next": "selfcare-2" },
-      { "label": "No tanto", "next": "selfcare-2" }
+      { "label": "a) Sí, con claridad",          "next": "q3" },
+      { "label": "b) No tanto",                  "next": "q3" },
+      { "label": "c) Más o menos",               "next": "q3" }
     ]
   },
   {
-    "id": "intimacy-1",
-    "text": "Tienes buena apertura emocional. ¿Sientes confianza para comprometerte a corto plazo?",
+    "id": "q2d",
+    "text": "¿Sientes que ya trabajaste esa herida o recurres a la relación para sanarla?",
     "options": [
-      { "label": "Sí, me siento preparadx", "next": "readiness-1" },
-      { "label": "No del todo", "next": "readiness-2" }
+      { "label": "a) La trabajé",                "next": "q3" },
+      { "label": "b) Quiero sanarla ahora",      "next": "q3" },
+      { "label": "c) Aún me duele, me influye", "next": "q3" }
     ]
   },
   {
-    "id": "intimacy-2",
-    "text": "Exploras tus emociones, pero dudas al compartir. ¿Te gustaría trabajar en tu autoexpresión primero?",
+    "id": "q3",
+    "text": "¿Cómo manejas el estrés emocional en tu día a día?",
     "options": [
-      { "label": "Sí, me interesa", "next": "selftherapy-1" },
-      { "label": "No, prefiero avanzar", "next": "readiness-2" }
+      { "label": "a) Medito o practico mindfulness",   "next": "q4" },
+      { "label": "b) Hablo con alguien de confianza",  "next": "q4" },
+      { "label": "c) Me distraigo con actividades",    "next": "q4" },
+      { "label": "d) Lo ignoro por completo",         "next": "q4" }
     ]
   },
   {
-    "id": "intimacy-3",
-    "text": "Compartir es un reto. ¿Deseas ejercicios de autorreflexión para explorar tus barreras?",
+    "id": "q4",
+    "text": "¿Qué tan cómodo te sientes expresando tus necesidades?",
     "options": [
-      { "label": "Sí, por favor", "next": "selftherapy-2" },
-      { "label": "No, gracias", "next": "readiness-3" }
+      { "label": "a) Muy cómodo",        "next": "q5" },
+      { "label": "b) A veces me cuesta", "next": "q5" },
+      { "label": "c) Prefiero callar",   "next": "q5" },
+      { "label": "d) Evito el tema",     "next": "q5" }
     ]
   },
   {
-    "id": "selfcare-1",
-    "text": "Ignorar puede acumular tensión. ¿Te interesa probar mindfulness o journaling?",
+    "id": "q5",
+    "text": "¿Cómo reaccionas ante un conflicto emocional?",
     "options": [
-      { "label": "Mindfulness", "next": "selfpractice-1" },
-      { "label": "Journaling", "next": "selfpractice-2" },
-      { "label": "Prefiero no ahora", "next": "readiness-3" }
+      { "label": "a) Busco diálogo",             "next": "q6" },
+      { "label": "b) Me alejo para calmarme",    "next": "q6" },
+      { "label": "c) Me siento atacadx",         "next": "q6" },
+      { "label": "d) Evito confrontar",          "next": "q6" }
     ]
   },
   {
-    "id": "selfcare-2",
-    "text": "Explorar es positivo. ¿Te gustaría profundizar con ejercicios guiados de reconocimiento?",
+    "id": "q6",
+    "text": "¿Qué tan importante es tu independencia dentro de una relación?",
     "options": [
-      { "label": "Sí, adelante", "next": "selfpractice-2" },
-      { "label": "No, gracias", "next": "readiness-2" }
+      { "label": "a) Es esencial",       "next": "q7" },
+      { "label": "b) Es relevante",      "next": "q7" },
+      { "label": "c) Me adapto fácil",   "next": "q7" },
+      { "label": "d) Dependo mucho",     "next": "q7" }
     ]
   },
   {
-    "id": "selfcare-3",
-    "text": "Identificar emociones es clave. ¿Quieres empezar con ejercicios básicos de reconocimiento?",
+    "id": "q7",
+    "text": "¿Qué tan abierto estás a recibir feedback constructivo?",
     "options": [
-      { "label": "Sí, vamos", "next": "selfpractice-1" },
-      { "label": "No, otro momento", "next": "readiness-3" }
+      { "label": "a) Muy abierto",      "next": "q8" },
+      { "label": "b) Lo acepto a veces", "next": "q8" },
+      { "label": "c) Me cuesta escucharlo", "next": "q8" },
+      { "label": "d) Lo rechazo",       "next": "q8" }
     ]
   },
   {
-    "id": "selftherapy-1",
-    "text": "Ejercicios de autoexpresión pueden fortalecer tu voz interna. ¿Listx para intentarlo?",
+    "id": "q8",
+    "text": "¿Cómo gestionas tu vulnerabilidad en tu día a día?",
     "options": [
-      { "label": "Sí, comencemos", "next": "selfpractice-2" },
-      { "label": "No ahora", "next": "readiness-2" }
+      { "label": "a) La comparto con confianza", "next": "q9" },
+      { "label": "b) Solo con cercanos",         "next": "q9" },
+      { "label": "c) La guardo para mí",         "next": "q9" },
+      { "label": "d) Evito sentirme vulnerable", "next": "q9" }
     ]
   },
   {
-    "id": "selftherapy-2",
-    "text": "Reflexionar aclara bloqueos. ¿Te gustaría una rutina semanal de preguntas?",
+    "id": "q9",
+    "text": "¿Cómo te sientes al recibir apoyo emocional de otros?",
     "options": [
-      { "label": "Sí, me interesa", "next": "selfpractice-3" },
-      { "label": "No, prefiero avanzar", "next": "readiness-3" }
+      { "label": "a) Agradecidx y fortalecido", "next": "q10" },
+      { "label": "b) A veces incómodx",         "next": "q10" },
+      { "label": "c) Me cuesta recibirlo",      "next": "q10" },
+      { "label": "d) Prefiero enfrentar solo",  "next": "q10" }
     ]
   },
   {
-    "id": "selfpractice-1",
-    "text": "Has elegido mindfulness. Tras 5 min de respiración consciente, ¿te sientes más equilibradx?",
+    "id": "q10",
+    "text": "¿Cuál es tu nivel de compromiso con tu crecimiento personal?",
     "options": [
-      { "label": "Sí, lo noto", "next": "readiness-1" },
-      { "label": "No, aún no", "next": "readiness-2" }
+      { "label": "a) Muy comprometidx",         "next": "ready" },
+      { "label": "b) Moderadamente comprometidx", "next": "almost_ready" },
+      { "label": "c) Algo comprometidx",        "next": "practice_more" },
+      { "label": "d) Poco comprometidx",        "next": "needs_support" }
     ]
   },
   {
-    "id": "selfpractice-2",
-    "text": "Has elegido journaling. Escribe tus emociones y luego evalúa: ¿te sientes más claro sobre lo que sientes?",
-    "options": [
-      { "label": "Sí, mucho más claro", "next": "readiness-1" },
-      { "label": "No tanto", "next": "readiness-2" }
-    ]
-  },
-  {
-    "id": "selfpractice-3",
-    "text": "Rutina semanal de reflexión. Tras 7 días, ¿notas avances en tu autoconocimiento?",
-    "options": [
-      { "label": "Sí, progreso notable", "next": "readiness-1" },
-      { "label": "No aún", "next": "readiness-2" }
-    ]
-  },
-  {
-    "id": "readiness-1",
-    "text": "🎉 ¡Felicidades! Muestras apertura y autoconocimiento. Estás listx para una relación sana.",
+    "id": "ready",
+    "text": "🎉 Listx y en equilibrio: Tienes autoconocimiento y motivación claras.",
     "options": []
   },
   {
-    "id": "readiness-2",
-    "text": "🙂 Tienes buena base, pero aún hay áreas por fortalecer. Sigue practicando antes de un compromiso serio.",
+    "id": "almost_ready",
+    "text": "🔧 En proceso de construcción: sigue profundizando en tu autoconocimiento.",
     "options": []
   },
   {
-    "id": "readiness-3",
-    "text": "⚠️ Quizá necesites más tiempo de autodescubrimiento. Prioriza tu bienestar antes de avanzar.",
+    "id": "practice_more",
+    "text": "⏸ En pausa necesaria: prioriza tu bienestar antes de avanzar.",
+    "options": []
+  },
+  {
+    "id": "needs_support",
+    "text": "⚠️ Riesgo de repetición de patrones: considera apoyo profesional.",
     "options": []
   }
 ]

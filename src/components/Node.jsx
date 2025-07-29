@@ -6,9 +6,9 @@ export default function Node({ node, onSelect }) {
     <div className="container centered">
       <p className="node-text">{node.text}</p>
       <div className="options">
-        {node.options.map(opt => (
+        {node.options.map((opt, idx) => (
           <button
-            key={opt.next}
+            key={`${node.id}-${idx}`}
             className="button button-primary"
             onClick={() => onSelect(opt.next)}
           >

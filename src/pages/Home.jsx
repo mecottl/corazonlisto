@@ -1,10 +1,11 @@
 import React from 'react'
-import { UseNavigate } from 'react-router-dom'
-import UseProgress from '../hooks/useProgress'
+import { useNavigate } from 'react-router-dom'
+import useProgress from '../hooks/useProgress'
+import '../styles/global.css'
 
-export default function home() {
-  const navigate = UseNavigate()
-  const { resetJourney } = UseProgress()
+export default function Home() {
+  const navigate = useNavigate()
+  const { resetJourney } = useProgress()
 
   const handleStart = () => {
     resetJourney()

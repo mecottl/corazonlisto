@@ -1,22 +1,22 @@
+// src/App.jsx
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {ProgressProvider} from './contexts/ProgressProvider'
 import Home from './pages/Home'
-import JourneySection from './pages/JourneySection'
-import Summary from './pages/Summary'
-import Settings from './pages/Settings'
-import Reset from './pages/Reset'
-import NotFound from './pages/NotFound'
+import Journey from './pages/Journey'
+import Result from './pages/Result'   
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/journey/:sectionId" element={<JourneySection />} />
-        <Route path="/summary" element={<Summary />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/reset" element={<Reset />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ProgressProvider>
+        <Routes>
+          <Route path="/"       element={<Home />} />
+          <Route path="/journey" element={<Journey />} />
+          <Route path="/result"  element={<Result />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </ProgressProvider>
     </BrowserRouter>
   )
 }
