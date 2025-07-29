@@ -47,10 +47,49 @@ export function ProgressProvider({ children }) {
 
   // Map de resultados finales
   const results = {
-    A: "⚠️ Resultado A: Puede venir del miedo a la soledad. Trabaja el autoconocimiento.",
-    B: "🎉 Resultado B: Muy equilibradx para una relación sana.",
-    C: "🔧 Resultado C: Buen camino pero sigue practicando comunicación.",
-    D: "⏸ Resultado D: Quizá necesites apoyo profesional o coaching."
+    A: `
+⚠️ **Resultado A: Miedo a la soledad**
+
+Tu recorrido refleja que tu principal motivación es evitar la soledad, y esto puede nublar otras necesidades emocionales.  
+• **Qué significa**: Buscas compañía antes de sentirte pleno contigo mismx. Esto puede generar relaciones de dependencia.  
+• **Próximos pasos**:  
+  1. **Fortalece tu identidad**: Dedica tiempo a hobbies, proyectos personales y actividades que disfrutes en solitario.  
+  2. **Autocompañía consciente**: Practica journaling o meditación para aprender a disfrutar tu propia compañía.  
+  3. **Red de apoyo**: Conecta con amistades o grupos de interés; no se trata de evitar la soledad, sino de sentirte sostenidx desde tu autonomía.
+  `.trim(),
+
+    B: `
+🎉 **Resultado B: Alta preparación y equilibrio**
+
+Tus respuestas muestran excelente autoconocimiento, límites claros y comunicación asertiva. Estás listx para una relación sana.  
+• **Qué significa**: Combinas independencia emocional con apertura a la intimidad.  
+• **Próximos pasos**:  
+  1. **Mantén la práctica**: Sigue reflexionando sobre tus emociones y compartiéndolas de forma clara.  
+  2. **Profundiza la conexión**: Explora vulnerabilidad con tu pareja —mostrar inseguridades también crea confianza.  
+  3. **Crecimiento conjunto**: Propongan metas y actividades para crecer unidxs sin perder tu individualidad.
+  `.trim(),
+
+    C: `
+🔧 **Resultado C: Buen avance, sigue practicando comunicación**
+
+Señalas fortalezas como reflexión ocasional y búsqueda de diálogo, pero aún te cuesta expresarte con consistencia.  
+• **Qué significa**: Tienes la base, pero a veces evitas el conflicto o no comunicas tus necesidades a tiempo.  
+• **Próximos pasos**:  
+  1. **Ejercicios de asertividad**: Ensaya frases para expresar tu sentir (“Cuando X sucede, me siento Y…”).  
+  2. **Feedback constante**: Pide retroalimentación a tu entorno cercano para calibrar tu estilo comunicativo.  
+  3. **Mindfulness en conversación**: Antes de responder, tómate un segundo para sentir tu cuerpo y elegir tus palabras.
+  `.trim(),
+
+    D: `
+⏸ **Resultado D: Necesitas apoyo profesional**
+
+Tu recorrido revela heridas profundas y mecanismos de evitación o autosabotaje. Una relación ahora podría reactivar patrones dolorosos.  
+• **Qué significa**: Buscas sanar viejas heridas a través de la pareja, y esto puede generar ciclos repetitivos.  
+• **Próximos pasos**:  
+  1. **Terapia o coaching**: Un espacio seguro para explorar y resolver traumas pasados.  
+  2. **Prácticas de autocuidado**: Establece rutinas de descanso, journaling y actividades creativas que te nutran.  
+  3. **Red de soporte**: Comparte tus procesos con amistades de confianza o grupos de apoyo especializados.
+  `.trim()
   }
 
   const finalText = results[winner]
