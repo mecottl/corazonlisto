@@ -1,17 +1,14 @@
+// src/pages/Result.jsx
 import React from 'react'
 import useProgress from '../hooks/useProgress'
 import { useNavigate } from 'react-router-dom'
 import html2canvas from 'html2canvas'
-import journeyData from '../data/journey.json'
 import '../styles/global.css'
 
 export default function Result() {
-  const { currentNodeId, resetJourney } = useProgress()
+  // Ya no necesitas currentNodeId ni journeyData
+  const { finalText, resetJourney } = useProgress()
   const navigate = useNavigate()
-
-  // Encuentra el nodo final según el ID
-  const finalNode = journeyData.find(n => n.id === currentNodeId)
-  const finalText = finalNode ? finalNode.text : 'Resultado no encontrado'
 
   const handleDownload = () => {
     const nodeEl = document.getElementById('result-card')
@@ -32,12 +29,11 @@ export default function Result() {
   return (
     <div className="container centered">
       <div id="result-card" className="result-card">
-        <h2 className="text-2xl font-semibold mb-4">Tu resultado</h2>
-        <p className="italic">“{finalText}”</p>
+        <h2>Tu resultado</h2>
+        <p>“{finalText}”</p>
       </div>
-
-      <div className="flex space-x-4 mt-6">
-        <button className="button button-secondary" onClick={handleDownload}>
+      <div>
+        <button onClick={handleDownload}>
           Descargar Resultado
         </button>
         <button className="button button-tertiary" onClick={handleRestart}>

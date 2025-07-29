@@ -17,7 +17,7 @@ export default function Home() {
       <h1>
         Autoconocimiento emocional
       </h1>
-      <button onClick={handleStart}>Empezar</button>
+      <button className="button button-primary" onClick={handleStart}>Empezar</button>
     </div>
   )
 }

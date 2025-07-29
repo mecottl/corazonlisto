@@ -1,3 +1,4 @@
+// src/components/Node.jsx
 import React from 'react'
 import '../styles/global.css'
 
@@ -8,9 +9,12 @@ export default function Node({ node, onSelect }) {
       <div className="options">
         {node.options.map((opt, idx) => (
           <button
-            key={`${node.id}-${idx}`}
+            key={idx}
             className="button button-primary"
-            onClick={() => onSelect(opt.next)}
+            // Aquí pasamos también opt.tag
+            onClick={() => {
+              console.log(opt.next, opt.tag)
+              onSelect(opt.next, opt.tag)}}
           >
             {opt.label}
           </button>
