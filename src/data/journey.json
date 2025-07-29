@@ -1,0 +1,149 @@
+[
+  {
+    "id": "start",
+    "text": "¡Bienvenidx! ¿Estás listx para explorar si estás preparadx para una relación?",
+    "options": [
+      { "label": "Sí, comencemos", "next": "awareness-1" },
+      { "label": "Prefiero pensarlo", "next": "awareness-1" }
+    ]
+  },
+  {
+    "id": "awareness-1",
+    "text": "¿Cómo te sientes emocionalmente hoy?",
+    "options": [
+      { "label": "Conectado con mis emociones", "next": "commitment-1" },
+      { "label": "Un poco desconectado", "next": "commitment-2" },
+      { "label": "Confundido sobre lo que siento", "next": "commitment-3" }
+    ]
+  },
+  {
+    "id": "commitment-1",
+    "text": "Tu conexión emocional es fuerte. ¿Te resulta fácil compartir tus sentimientos con alguien más?",
+    "options": [
+      { "label": "Sí, me abro con facilidad", "next": "intimacy-1" },
+      { "label": "A veces me cuesta", "next": "intimacy-2" },
+      { "label": "No, me cuesta bastante", "next": "intimacy-3" }
+    ]
+  },
+  {
+    "id": "commitment-2",
+    "text": "Estás algo desconectado. ¿Cuando piensas en tus emociones, sueles ignorarlas o explorarlas?",
+    "options": [
+      { "label": "Las ignoro", "next": "selfcare-1" },
+      { "label": "Las exploro", "next": "selfcare-2" }
+    ]
+  },
+  {
+    "id": "commitment-3",
+    "text": "La confusión puede indicar que necesitas mayor claridad. ¿Te cuesta identificar tus emociones en ciertos momentos?",
+    "options": [
+      { "label": "Mucho", "next": "selfcare-3" },
+      { "label": "Algo", "next": "selfcare-2" },
+      { "label": "No tanto", "next": "selfcare-2" }
+    ]
+  },
+  {
+    "id": "intimacy-1",
+    "text": "Tienes buena apertura emocional. ¿Sientes confianza para comprometerte a corto plazo?",
+    "options": [
+      { "label": "Sí, me siento preparadx", "next": "readiness-1" },
+      { "label": "No del todo", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "intimacy-2",
+    "text": "Exploras tus emociones, pero dudas al compartir. ¿Te gustaría trabajar en tu autoexpresión primero?",
+    "options": [
+      { "label": "Sí, me interesa", "next": "selftherapy-1" },
+      { "label": "No, prefiero avanzar", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "intimacy-3",
+    "text": "Compartir es un reto. ¿Deseas ejercicios de autorreflexión para explorar tus barreras?",
+    "options": [
+      { "label": "Sí, por favor", "next": "selftherapy-2" },
+      { "label": "No, gracias", "next": "readiness-3" }
+    ]
+  },
+  {
+    "id": "selfcare-1",
+    "text": "Ignorar puede acumular tensión. ¿Te interesa probar mindfulness o journaling?",
+    "options": [
+      { "label": "Mindfulness", "next": "selfpractice-1" },
+      { "label": "Journaling", "next": "selfpractice-2" },
+      { "label": "Prefiero no ahora", "next": "readiness-3" }
+    ]
+  },
+  {
+    "id": "selfcare-2",
+    "text": "Explorar es positivo. ¿Te gustaría profundizar con ejercicios guiados de reconocimiento?",
+    "options": [
+      { "label": "Sí, adelante", "next": "selfpractice-2" },
+      { "label": "No, gracias", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "selfcare-3",
+    "text": "Identificar emociones es clave. ¿Quieres empezar con ejercicios básicos de reconocimiento?",
+    "options": [
+      { "label": "Sí, vamos", "next": "selfpractice-1" },
+      { "label": "No, otro momento", "next": "readiness-3" }
+    ]
+  },
+  {
+    "id": "selftherapy-1",
+    "text": "Ejercicios de autoexpresión pueden fortalecer tu voz interna. ¿Listx para intentarlo?",
+    "options": [
+      { "label": "Sí, comencemos", "next": "selfpractice-2" },
+      { "label": "No ahora", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "selftherapy-2",
+    "text": "Reflexionar aclara bloqueos. ¿Te gustaría una rutina semanal de preguntas?",
+    "options": [
+      { "label": "Sí, me interesa", "next": "selfpractice-3" },
+      { "label": "No, prefiero avanzar", "next": "readiness-3" }
+    ]
+  },
+  {
+    "id": "selfpractice-1",
+    "text": "Has elegido mindfulness. Tras 5 min de respiración consciente, ¿te sientes más equilibradx?",
+    "options": [
+      { "label": "Sí, lo noto", "next": "readiness-1" },
+      { "label": "No, aún no", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "selfpractice-2",
+    "text": "Has elegido journaling. Escribe tus emociones y luego evalúa: ¿te sientes más claro sobre lo que sientes?",
+    "options": [
+      { "label": "Sí, mucho más claro", "next": "readiness-1" },
+      { "label": "No tanto", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "selfpractice-3",
+    "text": "Rutina semanal de reflexión. Tras 7 días, ¿notas avances en tu autoconocimiento?",
+    "options": [
+      { "label": "Sí, progreso notable", "next": "readiness-1" },
+      { "label": "No aún", "next": "readiness-2" }
+    ]
+  },
+  {
+    "id": "readiness-1",
+    "text": "🎉 ¡Felicidades! Muestras apertura y autoconocimiento. Estás listx para una relación sana.",
+    "options": []
+  },
+  {
+    "id": "readiness-2",
+    "text": "🙂 Tienes buena base, pero aún hay áreas por fortalecer. Sigue practicando antes de un compromiso serio.",
+    "options": []
+  },
+  {
+    "id": "readiness-3",
+    "text": "⚠️ Quizá necesites más tiempo de autodescubrimiento. Prioriza tu bienestar antes de avanzar.",
+    "options": []
+  }
+]
