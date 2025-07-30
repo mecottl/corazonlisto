@@ -1,0 +1,305 @@
+/* Contenedor principal de resultados */
+.container-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  position: relative;
+  margin: 40px;
+}
+
+/* Tarjeta de resultado principal */
+.result-card {
+  background: linear-gradient(135deg, #fef7ff 0%, #f0f9ff 25%, #fdf2f8 50%, #f3e8ff 75%, #e0e7ff 100%);
+  border: 3px solid transparent;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  max-width: 1000px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(139, 92, 246, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: resultAppear 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Borde animado de la tarjeta */
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, 
+    #f3e8ff, #ddd6fe, #fce7f3, #e0e7ff, 
+    #c7d2fe, #f9a8d4, #ddd6fe, #f3e8ff);
+  background-size: 400% 400%;
+  border-radius: 24px;
+  z-index: -1;
+  animation: borderFlow 6s ease-in-out infinite;
+}
+
+@keyframes borderFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Título del resultado */
+.result-card h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6b46c1, #be185d, #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  position: relative;
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+/* Texto del resultado */
+.result-card p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4c1d95;
+  line-height: 1.7;
+  margin: 0;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor de botones */
+.container-centered > div:last-child {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botón de descarga */
+.container-centered button:not(.button-restart) {
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  color: white;
+  border: none;
+  padding: 1.25rem 2rem;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 20px rgba(16, 185, 129, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  text-transform: none;
+  letter-spacing: 0.025em;
+}
+
+/* Efecto shimmer para botón de descarga */
+.container-centered button:not(.button-restart)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.container-centered button:not(.button-restart):hover::before {
+  left: 100%;
+}
+
+.container-centered button:not(.button-restart):hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 10px 30px rgba(16, 185, 129, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container-centered button:not(.button-restart):active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Icono de descarga */
+.container-centered button:not(.button-restart)::after {
+  content: '⬇';
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.container-centered button:not(.button-restart):hover::after {
+  transform: translateY(2px);
+}
+
+/* Botón de reinicio */
+.button-restart {
+  background: linear-gradient(135deg, #fed7d7 0%, #fbb6ce 50%, #f9a8d4 100%);
+  color: #be185d;
+  border: 2px solid #f9a8d4;
+  padding: 1.25rem 2rem;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 20px rgba(244, 114, 182, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-restart::after {
+  content: '🔄';
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  transition: transform 0.4s ease;
+}
+
+.button-restart:hover::after {
+  transform: rotate(180deg);
+}
+
+.button-restart:hover {
+  background: linear-gradient(135deg, #fbb6ce 0%, #f687b3 50%, #ec4899 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 10px 30px rgba(244, 114, 182, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #f472b6;
+}
+
+.button-restart:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Animación de aparición */
+@keyframes resultAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Efectos de confeti */
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive para resultados */
+@media (max-width: 768px) {
+  .container-centered {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .result-card {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .result-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .result-card p {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+  
+  .container-centered > div:last-child {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .container-centered button:not(.button-restart),
+  .button-restart {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Efectos especiales para celebración */
+@media (prefers-reduced-motion: no-preference) {
+  .result-card {
+    animation: resultAppear 1s cubic-bezier(0.4, 0, 0.2, 1), 
+               gentleBounce 6s ease-in-out 2s infinite;
+  }
+  
+  @keyframes gentleBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* Efecto de éxito */
+.result-card.success-animation {
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

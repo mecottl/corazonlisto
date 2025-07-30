@@ -1,7 +1,6 @@
 // src/components/Node.jsx
 import React from 'react'
 import '../styles/global.css'
-
 export default function Node({ node, onSelect }) {
   return (
     <div className="container centered">
@@ -11,7 +10,6 @@ export default function Node({ node, onSelect }) {
           <button
             key={idx}
             className="button button-primary"
-            // Aquí pasamos también opt.tag
             onClick={() => {
               console.log(opt.next, opt.tag)
               onSelect(opt.next, opt.tag)}}

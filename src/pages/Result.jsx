@@ -3,7 +3,7 @@ import React from 'react'
 import useProgress from '../hooks/useProgress'
 import { useNavigate } from 'react-router-dom'
 import html2canvas from 'html2canvas'
-import '../styles/global.css'
+import '../styles/result.css'
 
 export default function Result() {
   // Ya no necesitas currentNodeId ni journeyData
@@ -27,7 +27,13 @@ export default function Result() {
   }
 
   return (
-    <div className="container centered">
+    <>
+     <header>
+        <nav class="container">
+          <a href="/" class="logo">💕 LoveReady</a>
+        </nav>
+      </header>
+    <div className="container-centered">
       <div id="result-card" className="result-card">
         <h2>Tu resultado</h2>
         <p>“{finalText}”</p>
@@ -36,10 +42,11 @@ export default function Result() {
         <button onClick={handleDownload}>
           Descargar Resultado
         </button>
-        <button className="button button-tertiary" onClick={handleRestart}>
+        <button className="button-restart" onClick={handleRestart}>
           Reiniciar
         </button>
       </div>
     </div>
+    </>
   )
 }

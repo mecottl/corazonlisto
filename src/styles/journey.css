@@ -1,0 +1,206 @@
+.node-text {
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--color-contrast2);
+  margin: 2.5rem 0;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #fef7ff 0%, #f0f9ff 50%, #fdf2f8 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 
+    0 10px 25px rgba(139, 92, 246, 0.1),
+    0 4px 10px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.node-text::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #f3e8ff, #ddd6fe, #fce7f3, #e0e7ff);
+  border-radius: 20px;
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.button {
+  padding: 1.25rem 2rem;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  letter-spacing: 0.025em;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #fce7f3 0%, #ddd6fe 50%, #e0e7ff 100%);
+  color:var(--color-contrast);
+  border: 2px solid #e9d5ff;
+  box-shadow: 
+    0 4px 15px rgba(139, 92, 246, 0.2),
+    0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s;
+}
+
+.button-primary:hover::before {
+  left: 100%;
+}
+
+.button-primary:hover {
+  background: linear-gradient(135deg, #f3e8ff 0%, #c7d2fe 50%, #ddd6fe 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 8px 25px rgba(139, 92, 246, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.15);
+  border-color: #c4b5fd;
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #fed7d7 0%, #fbb6ce 50%, #f9a8d4 100%);
+  color: #be185d;
+  border: 2px solid #f9a8d4;
+  padding: 1rem 1.5rem 1rem 0.4rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 5rem 0 0 4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 15px rgba(244, 114, 182, 0.2),
+    0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reset-button::after {
+  content: '↻';
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.reset-button:hover::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.reset-button:hover {
+  background: linear-gradient(135deg, #fbb6ce 0%, #f687b3 50%, #ec4899 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 6px 20px rgba(244, 114, 182, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.15);
+  border-color: #f472b6;
+}
+
+.reset-button:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Efectos de carga y transiciones */
+.container {
+  animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+  body {
+    background-size: 600% 600%;
+  }
+  
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .node-text {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .reset-button {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Efectos adicionales para interactividad */
+@media (prefers-reduced-motion: no-preference) {
+  .button-primary {
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 
+        0 4px 15px rgba(139, 92, 246, 0.2),
+        0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 
+        0 4px 20px rgba(139, 92, 246, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
